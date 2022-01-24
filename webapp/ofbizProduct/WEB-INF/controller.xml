@@ -54,7 +54,17 @@ under the License.
 
     <request-map uri="createOfbizProductEvent">
         <security https="false" auth="false"/>
+<!--        <event type="service" path="" invoke="createProduct"/>-->
         <event type="java" path="com.companyname.ofbizproduct.events.OfbizProductEvents" invoke="createOfbizProductEvent"/>
+        <response name="success" type="view" value="main"/>
+        <response name="error" type="view" value="main"/>
+    </request-map>
+
+    <!-- request mapping controller for creating a product using existing service "createProduct" into existing table "Product" -->
+
+    <request-map uri="createProduct">
+        <security https="false" auth="false"/>
+        <event type="service" path="" invoke="createProduct"/>
         <response name="success" type="view" value="main"/>
         <response name="error" type="view" value="main"/>
     </request-map>
