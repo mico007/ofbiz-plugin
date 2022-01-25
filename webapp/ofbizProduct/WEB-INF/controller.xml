@@ -69,6 +69,15 @@ under the License.
         <response name="error" type="view" value="main"/>
     </request-map>
 
+    <!-- request mapping controller for creating  product price using existing service "createProductPrice" into existing table "ProductPrice" -->
+
+    <request-map uri="createProductPrice">
+        <security https="false" auth="false"/>
+        <event type="service" path="" invoke="createProductPrice"/>
+        <response name="success" type="view" value="main"/>
+        <response name="error" type="view" value="main"/>
+    </request-map>
+
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://ofbizProduct/widget/OfbizProductScreens.xml#main"/>
     <view-map name="FindOfbizProduct" type="screen" page="component://ofbizProduct/widget/OfbizProductScreens.xml#FindOfbizProduct"/>
