@@ -78,6 +78,15 @@ under the License.
         <response name="error" type="view" value="main"/>
     </request-map>
 
+    <!-- request mapping controller for setting the seller as supplier of the product using existing service "createSupplierProduct" into existing table "SupplierProduct" -->
+
+    <request-map uri="createSupplierProduct">
+        <security https="false" auth="false"/>
+        <event type="service" path="" invoke="createSupplierProduct"/>
+        <response name="success" type="view" value="main"/>
+        <response name="error" type="view" value="main"/>
+    </request-map>
+
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://ofbizProduct/widget/OfbizProductScreens.xml#main"/>
     <view-map name="FindOfbizProduct" type="screen" page="component://ofbizProduct/widget/OfbizProductScreens.xml#FindOfbizProduct"/>
